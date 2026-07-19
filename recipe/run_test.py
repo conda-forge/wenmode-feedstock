@@ -48,4 +48,4 @@ if PLATFORM == "linux":
     ]
 
 if __name__ == "__main__":
-    sys.exit(any(call(cmd) for cmd in CMDS))
+    sys.exit(any(call(cmd, cwd="src") for cmd in CMDS))
