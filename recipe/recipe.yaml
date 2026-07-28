@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.13.0"
+  version: "0.13.1"
   python_check_max: "3.14"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/w/wenmode/wenmode-${{ version }}.tar.gz
-    sha256: 97c51875c0f9b3ddb6470bffcf51d1f570d25b0bfc06f89562e06cada2d9ee33
+    sha256: 11fb438a0a3c6964ed31e12d39065df0b80735a0ff24f77c701ee0d485c406fd
     target_directory: dist
   - url: https://github.com/lepture/wenmode/archive/refs/tags/${{ version }}.tar.gz
-    sha256: a29fdc958758dba14e0d7570a2df16050f48f7226a7f3204f71eaaa9a9406ef2
+    sha256: 7262d29d9f1d1ed6df6009e39409f7c4097c9bc094303d77cd371061564d33a2
     target_directory: src
 
 build:
