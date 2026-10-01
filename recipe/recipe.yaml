@@ -22,7 +22,7 @@ build:
   noarch: python
   script:
     - cd dist
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
   python:
     entry_points:
       - wenmode = wenmode.cli:main
@@ -36,6 +36,13 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      files:
+        - etc/conda/test-files/wenmode/**
+      site_packages:
+        - wenmode/**
+        - wenmode-${{ version }}.dist-info/**
   - python:
       imports: wenmode
       pip_check: true
